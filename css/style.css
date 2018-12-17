@@ -15,10 +15,7 @@ html, body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100vh 375px auto minmax(476px, auto) auto auto 100vh auto 111px; /* minmax not working properly*/
-    height: 100%;
 }
-
-
 
 
 /* HEADER */
@@ -234,7 +231,7 @@ html, body {
     font-size: 3.6rem;
     color: #4e4e4e;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 .section_title::after {
     content: "";
@@ -527,27 +524,35 @@ html, body {
 .section_content_wrapper {    
     display: grid;
     grid-template-columns: minmax(auto, 1160px);
-    grid-template-rows: minmax(191px, auto) max-content;
-    align-content: center;
+    grid-template-rows: minmax(191px, auto) auto;
+    align-items: center;
     justify-items: center;
     justify-content: center;
-    height: 100%;
 }
 
 /* Carousel */
 .carousel {
-    position: relative;
-    display: grid; /*Убрать в релизе*/
-    grid-template-columns: 420px;
+    display: grid;
+    grid-template-columns: minmax(auto, 1160px);
+    grid-template-rows: auto 100px;
     justify-items: center;
 }
-.carousel__content {
-    display: flex;
-    justify-content: space-around;
-    width: 420px;
-    overflow: hidden;
+
+
+.carousel__nav {
+    position: relative;
+    display: grid;
+    grid-template-columns: 420px;
+    align-content: center;
+    justify-items: center;
 }
-.carousel__content_image {
+.carousel__nav_indicators {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.nav_indicator {
     position: relative;
     height: 68px; 
     width: 68px;   
@@ -555,14 +560,14 @@ html, body {
     border-radius: 50%;
     overflow: hidden;
 }
-.carousel__content_image img {
+.nav_indicator img {
     height: 100%; 
     width: 100%;   
 }
-.carousel__content_image-active {
+.nav_indicator-active {
     animation: moveUp 500ms linear 0s forwards;
 }
-.carousel__content_image-active::before { 
+.nav_indicator-active::before { 
     content: "";
     position: absolute;
     top: -1px;
@@ -573,7 +578,7 @@ html, body {
     border-radius: 50%;
     animation: appear 500ms linear 0s forwards;
 }
-.carousel__content_image-inactive {
+.nav_indicator-inactive {
     animation: moveDown 500ms linear 0s forwards; 
 }
 
@@ -602,7 +607,7 @@ html, body {
     }
 }  
 
-.carousel__control {
+.carousel__nav_buttons {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -620,7 +625,7 @@ html, body {
     text-align: center;
 }
 .carousel__control_btn i {
-    /* color: #ffffff; */
+    color: #ffffff;
 }
 
 
