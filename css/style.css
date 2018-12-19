@@ -14,7 +14,7 @@ html, body {
 .wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100vh 375px auto minmax(476px, auto) auto auto 100vh auto 111px; /* minmax not working properly*/
+    grid-template-rows: 100vh 375px auto minmax(476px, auto) auto auto minmax(890px, auto) auto 111px; /* minmax not working properly*/
 }
 
 
@@ -448,6 +448,7 @@ html, body {
     grid-gap: 45px 28px;
 }
 .news_item {
+    display: block;
     width: 263px;
 }
 .news_item__photo {
@@ -525,20 +526,71 @@ html, body {
     display: grid;
     grid-template-columns: minmax(auto, 1160px);
     grid-template-rows: minmax(191px, auto) auto;
+    grid-gap: 110px;
     align-items: center;
     justify-items: center;
     justify-content: center;
 }
+.testimonials .section_title {
+    color: #ffffff;
+}
+
 
 /* Carousel */
 .carousel {
     display: grid;
     grid-template-columns: minmax(auto, 1160px);
     grid-template-rows: auto 100px;
+    grid-gap: 40px;
     justify-items: center;
 }
 
-
+.carousel__content {
+    display: grid;
+    grid-template-columns: minmax(auto, 1080px);
+    grid-gap: 40px;
+    align-items: flex-end;
+    justify-items: center;
+    text-align: center;
+}
+.quote {
+    position: relative;
+    color:  #bbbbbb;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 30px;
+}
+.quote::before {
+    content: url(../images/icons/icon-open_quote.png);
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%);
+}
+.quote_author {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+.quote_author__name {
+    color:  #18cfab;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 27px;
+    text-transform: uppercase;
+}
+.quote_author__spec {
+    color:  #bbbbbb;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 27px;
+}
+.quote_author__photo {
+    margin-top: 25px;
+    height: 164px;
+    width: 164px;
+}
 .carousel__nav {
     position: relative;
     display: grid;
@@ -552,34 +604,46 @@ html, body {
     justify-content: space-around;
     width: 100%;
 }
+.quote_author__photo,
 .nav_indicator {
     position: relative;
-    height: 68px; 
-    width: 68px;   
-    border: 3px solid rgba(31, 218, 181, 0.2);
+    border: 10px solid rgba(31, 218, 181, 0.2);
     border-radius: 50%;
     overflow: hidden;
 }
+.nav_indicator {
+    border-width: 3px;
+    height: 68px; 
+    width: 68px;   
+}
+.quote_author__photo img,
 .nav_indicator img {
     height: 100%; 
     width: 100%;   
 }
 .nav_indicator-active {
-    animation: moveUp 500ms linear 0s forwards;
+    animation: moveUp 100ms linear 0s forwards;
 }
+.quote_author__photo::before,
 .nav_indicator-active::before { 
     content: "";
     position: absolute;
     top: -1px;
     left: -1px;
-    height: 58px;
-    width: 58px;
     border: 3px solid #18cfab;
     border-radius: 50%;
-    animation: appear 500ms linear 0s forwards;
+}
+.quote_author__photo::before {
+    height: 140px;
+    width: 140px; 
+}
+.nav_indicator-active::before {
+    height: 58px;
+    width: 58px;
+    animation: appear 100ms linear 0s forwards;
 }
 .nav_indicator-inactive {
-    animation: moveDown 500ms linear 0s forwards; 
+    animation: moveDown 100ms linear 0s forwards; 
 }
 
 @keyframes appear {
@@ -620,12 +684,10 @@ html, body {
 .carousel__control_btn-right {
     height: 30px;
     width: 30px;
-    border: 1px solid black;
+    border: 1px solid #ffffff;
     line-height: 30px;
-    text-align: center;
-}
-.carousel__control_btn i {
     color: #ffffff;
+    text-align: center;
 }
 
 
