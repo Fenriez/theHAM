@@ -365,9 +365,11 @@ i.nav__item {
     text-transform: capitalize;
     cursor: pointer;
 }
+.nav__btn.filtered,
 .portfolio_review__nav .nav__btn:hover {
     color: #18cfab;
 }
+.nav__btn.filtered::before,
 .portfolio_review__nav .nav__btn:hover::before {
     content: "";
     position: absolute;

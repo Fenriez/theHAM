@@ -1,4 +1,4 @@
-  
+// $('')
 
 document.addEventListener('DOMContentLoaded', () => {
     let carousel_content = document.getElementsByClassName('nav_indicator'),
