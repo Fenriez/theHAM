@@ -89,12 +89,16 @@ html, body {
     justify-content: space-between;
     text-align: right;
 }
-.nav__item {
+a.nav__item {
     font-size: 1.3rem;
     font-weight: 700;
     color: #b8b8b8;
     transition: 0.4s;
     text-transform: uppercase;
+}
+i.nav__item {
+    color: #b8b8b8;
+    transition: 0.4s;
 }
 .nav__item:hover {
     color: #18cfab;
@@ -268,11 +272,13 @@ html, body {
     text-transform: capitalize;
     cursor: pointer;
 }
+.review_block__nav .nav__btn-active,
 .review_block__nav .nav__btn:hover {
     border: 1px solid #18cfab;
     background: #18cfab;
     color: #ffffff;
 }
+.review_block__nav .nav__btn-active::after,
 .review_block__nav .nav__btn:hover::after {
     content: "";
     position: absolute;

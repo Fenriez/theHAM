@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./script/main.js"></script>
-    <script src="./script/carousel.js"></script>
 </head>
 
 <body>
@@ -34,6 +32,7 @@
                     <a href="#" class="nav__item">blog</a>
                     <a href="#" class="nav__item">team</a>
                     <a href="#" class="nav__item">contact</a>
+                    <i class="nav__item fas fa-search fa-2x"></i>
                 </nav>
             </div>
         </header>
@@ -78,7 +77,7 @@
                     <li class="nav__btn">seo service</li>
                 </ul>
                 <div class="review_block__content">
-                    <img class="service_image" src="images/service_block/img-service.jpg" alt="Very busy working man Oo">
+                    <img class="service_image" src="./images/section-content/service/img-web_design.jpg" alt="Very busy working man Oo">
                     <p class="service_description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
                         facilis natus, nihil mollitia nobis fugit fugiat. Eum commodi dolorem, laudantium debitis quod
                         aperiam distinctio neque voluptate veritatis dolor consequatur nulla.
@@ -117,8 +116,8 @@
                     <li class="nav__btn">Wordpress</li>
                 </ul>
                 <div class="portfolio_content">
-                    <div class="portfolio_image">
-                        <img src="./images/web design/web-design1.jpg" alt="web-design1.jpg">
+                    <div class="portfolio_image" data-group="graphic design">
+                        <img src="./images/section-content/portfolio/web_design/web-design1.jpg" alt="web-design1.jpg">
                         <div class="portfolio_image__overlay">
                             <div class="overlay_ctrl">
                                 <a class="overlay_btn portfolio_image_link" href="#">
@@ -157,7 +156,7 @@
             <div class="news_content">
                 <div class="news_item">
                     <div class="news_item__photo">
-                        <img src="./images/news_photos/photo-news1.jpg" alt="News #1">
+                        <img src="./images/section-content/news/photo-news1.jpg" alt="News #1">
                         <div class="news_item__photo_overlay">
                             <p>12</p>
                             <p>Feb</p>
@@ -188,23 +187,23 @@
                                 <h6 class="quote_author__name">Hasan Ali</h6>
                                 <p class="quote_author__spec">UX Designer</p>
                                 <div class="quote_author__photo">
-                                    <img src="./images/testmonials_authors/photo-author1.png" alt="Author1">
+                                    <img src="./images/section-content/testmonials/photo-author1.png" alt="Author1">
                                 </div>
                             </div>
                         </blockquote>
                         <div class="carousel__nav">
                             <div class="carousel__nav_indicators">
                                 <div class="nav_indicator nav_indicator-active">
-                                    <img src="./images/testmonials_authors/photo-author1.png" alt="Author1">
+                                    <img src="./images/section-content/testmonials/photo-author1.png" alt="Author1">
                                 </div>
                                 <div class="nav_indicator">
-                                    <img src="./images/testmonials_authors/photo-author2.png" alt="Author1">
+                                    <img src="./images/section-content/testmonials/photo-author2.png" alt="Author1">
                                 </div>
                                 <div class="nav_indicator">
-                                    <img src="./images/testmonials_authors/photo-author3.png" alt="Author1">
+                                    <img src="./images/section-content/testmonials/photo-author3.png" alt="Author1">
                                 </div>
                                 <div class="nav_indicator">
-                                    <img src="./images/testmonials_authors/photo-author4.png" alt="Author1">
+                                    <img src="./images/section-content/testmonials/photo-author4.png" alt="Author1">
                                 </div>
                             </div>
                             <div class="carousel__nav_buttons">
@@ -228,6 +227,12 @@
             <p class="copyright">&copy; Copyright 2015 <span>theHam</span> | All Rights Reserved</p>
         </footer>
     </div>
+
+    <!-- SCRIPTS -->
+    <script src="./script/main.js"></script>
+    <script src="./script/carousel.js"></script>
+    <script src="./script/tabs.js"></script>
+    <script src="./script/portfolio_filter.js"></script>
 </body>
 
 </html>
