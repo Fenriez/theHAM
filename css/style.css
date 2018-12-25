@@ -14,7 +14,7 @@ html, body {
 .wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100vh 375px auto minmax(476px, auto) auto auto minmax(890px, auto) auto 111px; /* minmax not working properly*/
+    grid-template-rows: 100vh 375px auto minmax(476px, auto) auto auto minmax(890px, auto) auto 111px;
 }
 
 
@@ -292,10 +292,11 @@ i.nav__item {
 
 .review_block__content {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 16.666% auto;
 }
 .service_image {
     padding-top: 5px;
+    width: 100%;
 }
 .service_description {
     margin-left: 20px;
@@ -608,10 +609,13 @@ i.nav__item {
     justify-items: center;
 }
 .carousel__nav_indicators {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 100px;
     align-items: center;
-    justify-content: space-around;
+    justify-items: center;
     width: 100%;
+    overflow: hidden;
 }
 .quote_author__photo,
 .nav_indicator {
