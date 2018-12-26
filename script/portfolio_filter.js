@@ -1,8 +1,11 @@
-$(window).on('load', function() {
-    portfolioImagesLoader();
+$(window).on('load', function () {
+    let hidden = $('.portfolio_image:hidden');
+    imagesLoader($('.portfolio_image'));
 
     $('.portfolio_review__nav > .nav__btn').on('click', function () {
-        let data_group = $(this).text();
+        let data_group = $(this).text(),
+            buffer = [];
+
         $('.portfolio_review__nav > .filtered').toggleClass('filtered');
         $(this).toggleClass('filtered');
         $.each($('.portfolio_image'), function (index, elem) {
@@ -10,21 +13,41 @@ $(window).on('load', function() {
                 if ($(elem).data('group') !== data_group) {
                     $(elem).hide();
                 } else {
-                    $(elem).show();
+                    buffer.push($(elem));
                 }
-            } else {                
-                portfolioImagesLoader();
+            } else {
+                imagesLoader($('.portfolio_image'));
             };
         });
-        console.log($('.portfolio_image:hidden').data('group') == data_group);
-        // if ($('.portfolio_image:hidden').length != 0 && $('.portfolio_image:hidden').data('group') == data_group || data_group == 'all') {
-        //     console.log(true);
-        // } 
+
+        imagesLoader(buffer);
+
+        hidden = $(`.portfolio_image[data-group="${data_group}"]:hidden`);
+        console.log(hidden.length);
+        if (data_group !== 'all') {
+            if (!hidden.length) {
+                $('.portfolio_review > .load_more_btn').hide();
+            } else {
+                $('.portfolio_review > .load_more_btn').show();
+            }
+        } else if (!$('.portfolio_image:hidden')) {
+            $('.portfolio_review > .load_more_btn').hide();
+        } else {
+            $('.portfolio_review > .load_more_btn').show();
+        }
     });
 
-    $('.load_more_btn').on('click', function() {
+    $('.load_more_btn').on('click', function () {
         $(this).hide().next().show();
         let loading = setTimeout(() => {
+            if (hidden.length) {
+                for (let i = 0; i < 12; i++) {
+                    $(hidden[i]).show();
+                }
+            } else {
+                $('.portfolio_review > .load_more_btn').show();
+            }
+
             $('.preloader').hide().prev().show();
             clearTimeout('loading');
         }, 4000);
@@ -33,9 +56,9 @@ $(window).on('load', function() {
 
 let portfolio_images = $('.portfolio_image');
 
-function portfolioImagesLoader() {
-    $(portfolio_images).hide();
+function imagesLoader(image_arr) {
+    $(image_arr).hide();
     for (let i = 0; i < 12; i++) {
-        $(portfolio_images[i]).show();
+        $(image_arr[i]).show();
     };
 }
