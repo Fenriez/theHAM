@@ -40,15 +40,15 @@ $(window).on('load', function () {
     $('.load_more_btn').on('click', function () {
         $(this).hide().next().show();
         let loading = setTimeout(() => {
-            if (hidden.length) {
-                for (let i = 0; i < 12; i++) {
-                    $(hidden[i]).show();
-                }
-            } else {
-                $('.portfolio_review > .load_more_btn').show();
+            console.log(hidden);
+            for (let i = 0; i < 12; i++) {
+                $(hidden[i]).show();
             }
-
-            $('.preloader').hide().prev().show();
+            if ($(hidden).length) {
+                $('.preloader').hide();
+            } else {
+                $('.preloader').hide().prev().show();
+            }
             clearTimeout('loading');
         }, 4000);
     });
@@ -61,4 +61,5 @@ function imagesLoader(image_arr) {
     for (let i = 0; i < 12; i++) {
         $(image_arr[i]).show();
     };
+    console.log($(image_arr));
 }
