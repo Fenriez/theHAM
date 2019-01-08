@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./css/preloader.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="./libs/masonry/masonry.pkgd.min.js"></script>
 </head>
 
 <body>
@@ -746,20 +748,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <img class="portfolio_image" src="./images/web design/web-design2.jpg" alt="web-design2.jpg">
-                    <img class="portfolio_image" src="./images/web design/web-design3.jpg" alt="web-design3.jpg">
-                    <img class="portfolio_image" src="./images/web design/web-design1.jpg" alt="web-design1.jpg">
-                    <img class="portfolio_image" src="./images/wordpress/wordpress1.jpg" alt="wordpress1.jpg">
-                    <img class="portfolio_image" src="./images/wordpress/wordpress2.jpg" alt="wordpress2.jpg">
-                    <img class="portfolio_image" src="./images/wordpress/wordpress3.jpg" alt="wordpress3.jpg">
-                    <img class="portfolio_image" src="./images/wordpress/wordpress4.jpg" alt="wordpress4.jpg">
-                    <img class="portfolio_image" src="./images/graphic design/graphic-design1.jpg" alt="graphic-design1.jpg">
-                    <img class="portfolio_image" src="./images/graphic design/graphic-design2.jpg" alt="graphic-design2.jpg">
-                    <img class="portfolio_image" src="./images/landing page/landing-page1.jpg" alt="landing-page1.jpg">
-                    <img class="portfolio_image" src="./images/landing page/landing-page2.jpg" alt="landing-page2.jpg"> -->
                 </div>
                 <button class="btn load_more_btn">
-                    <i class="fas fa-plus fa-lg"></i>                                     
+                    <i class="fas fa-plus fa-lg"></i>
                     load more
                 </button>
                 <div class="preloader">
@@ -771,7 +762,7 @@
                     <div class="f_circleG frotateG_06"></div>
                     <div class="f_circleG frotateG_07"></div>
                     <div class="f_circleG frotateG_08"></div>
-                </div>   
+                </div>
             </div>
         </section>
         <section class="news">
@@ -914,15 +905,11 @@
 
                     <div class="carousel">
                         <blockquote class="carousel__content">
-                            <p class="quote">
-                                <!-- Quote placeholder -->
-                            </p>
+                            <p class="quote"></p>
                             <div class="quote_author">
                                 <h6 class="quote_author__name"></h6>
                                 <p class="quote_author__spec"></p>
-                                <div class="quote_author__photo">
-                                    <!-- Author photo placeholder -->
-                                </div>
+                                <div class="quote_author__photo"></div>
                             </div>
                         </blockquote>
                         <div class="carousel__nav">
@@ -958,18 +945,45 @@
         </section>
         <section class="gallery">
             <h3 class="section_title">gallery of best images</h3>
-
+            <div class="gallery_content grid">
+                <div class="grid-sizer"></div>
+                <div class="gallery_content__image_wrapper grid-item">
+                    <img src="./images/section-content/news/photo-news1.jpg" alt="..." class="gallery_content__image">
+                    <div class="gallery_content__image_overlay">
+                        <div class="overlay_ctrl">
+                            <a class="overlay_btn portfolio_image_search" href="#">
+                                <i class="fas fa-search fa-3x"></i>
+                            </a>
+                            <a class="overlay_btn portfolio_image_resize" href="#">
+                                <i class="fas fa-arrows-alt fa-3x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="btn load_more_btn">
+                <i class="fas fa-plus fa-lg"></i>
+                load more
+            </button>
+            <div class="preloader">
+                <div class="f_circleG frotateG_01"></div>
+                <div class="f_circleG frotateG_02"></div>
+                <div class="f_circleG frotateG_03"></div>
+                <div class="f_circleG frotateG_04"></div>
+                <div class="f_circleG frotateG_05"></div>
+                <div class="f_circleG frotateG_06"></div>
+                <div class="f_circleG frotateG_07"></div>
+                <div class="f_circleG frotateG_08"></div>
+            </div>
         </section>
         <footer class="footer">
             <p class="copyright">&copy; Copyright 2015 <span>theHam</span> | All Rights Reserved</p>
         </footer>
     </div>
 
-    <!-- SCRIPTS -->
+    <script src="./script/my_masonry.js"></script>
     <script src="./script/main.js"></script>
-    <script src="./script/carousel.js"></script>
-    <script src="./script/tabs.js"></script>
-    <script src="./script/portfolio_filter.js"></script>
 </body>
 
 </html>

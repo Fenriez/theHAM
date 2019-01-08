@@ -1,5 +1,18 @@
 $(window).on('load', function () {
-    let hidden = $('.portfolio_image:hidden');
+    let portfolio_images = $('.portfolio_image'),
+        hidden = $('.portfolio_image:hidden');
+
+    function imagesLoader(image_arr) {
+        $(image_arr).hide();
+        console.log(hidden);
+        for (let i = 0; i < 12; i++) {
+            $(image_arr[i]).show();
+        };
+        // console.log($(image_arr));
+        hidden = $('.portfolio_image:hidden');
+        console.log(hidden);
+
+    }
     imagesLoader($('.portfolio_image'));
 
     $('.portfolio_review__nav > .nav__btn').on('click', function () {
@@ -40,26 +53,14 @@ $(window).on('load', function () {
     $('.load_more_btn').on('click', function () {
         $(this).hide().next().show();
         let loading = setTimeout(() => {
-            console.log(hidden);
-            for (let i = 0; i < 12; i++) {
-                $(hidden[i]).show();
-            }
-            if ($(hidden).length) {
+            imagesLoader(hidden);
+            console.log(hidden.length);
+            if (!$(hidden).length) {
                 $('.preloader').hide();
             } else {
                 $('.preloader').hide().prev().show();
             }
             clearTimeout('loading');
-        }, 4000);
+        }, 1000);
     });
 });
-
-let portfolio_images = $('.portfolio_image');
-
-function imagesLoader(image_arr) {
-    $(image_arr).hide();
-    for (let i = 0; i < 12; i++) {
-        $(image_arr[i]).show();
-    };
-    console.log($(image_arr));
-}

@@ -1,6 +1,3 @@
-
-
-
 /* TAGS */
 html {   
     font-family: 'Montserrat', sans-serif;
@@ -16,7 +13,6 @@ html, body {
     grid-template-columns: 1fr;
     grid-template-rows: 100vh 375px auto minmax(476px, auto) auto auto minmax(890px, auto) auto 111px;
 }
-
 
 /* HEADER */
 .header {
@@ -343,7 +339,6 @@ i.nav__item {
 }
 
 /* SECTION "PORTFOLIO" */
-
 .portfolio_review {
     display: grid;
     grid-template-rows: minmax(60px, auto) auto;
@@ -414,12 +409,12 @@ i.nav__item {
     border-top: 3px solid #18cfab;
     background: #ffffff;
 }
-.overlay_ctrl {
+.portfolio_image__overlay .overlay_ctrl {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 5px;
 }
-.overlay_btn {
+.portfolio_image__overlay .overlay_btn {
     height: 40px;
     width: 40px;
     border: 1px solid #18cfab;
@@ -429,21 +424,21 @@ i.nav__item {
     color: #18cfab;
     text-align: center;
 }
-.overlay_btn:hover {
+.portfolio_image__overlay .overlay_btn:hover {
     background: #18cfab;
     color: #ffffff;
 }
-.overlay_title {
+.portfolio_image__overlay .overlay_title {
     text-align: center;
 }
-.overlay_name {
+.portfolio_image__overlay .overlay_name {
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 42px;
     text-transform: uppercase;
     color: #18cfab;
 }
-.overlay_title p {
+.portfolio_image__overlay .overlay_title p {
     font-size: 1.2rem;
     font-weight: 300;
     color: #8a8a8a;
@@ -545,7 +540,6 @@ i.nav__item {
 .testimonials .section_title {
     color: #ffffff;
 }
-
 
 /* Carousel */
 .carousel {
@@ -660,6 +654,102 @@ i.nav__item {
     animation: moveDown 100ms linear 0s forwards; 
 }
 
+.carousel__nav_buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 480px;
+    justify-content: space-between;
+}
+.carousel__control_btn-left,
+.carousel__control_btn-right {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #ffffff;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* SECTION "GALLERY" */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.grid-sizer {
+    width: 32.2%;
+}
+.grid-item {
+    position: relative;
+    float: left;
+    width: 32.2%;
+    margin-bottom: 17px;
+}
+.grid-item img {
+    display: block;
+    width: 100%;
+}
+.gallery_content__image_overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;  
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+.gallery_content__image_overlay .overlay_ctrl {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    align-items: center;
+    align-content: center;
+}
+.gallery_content__image_overlay .overlay_btn {
+    height: 60px;
+    width: 60px;
+    border: 1px solid #14B9D5;
+    background: #14B9D5;
+    /* line-height: 60px; */
+    color: #ffffff;
+    text-align: center;
+}
+
+.grid-item:hover .gallery_content__image_overlay {
+    display: grid;
+}
+.gallery_content__image_overlay .overlay_ctrl {
+
+}
+
+.gallery .load_more_btn {
+    justify-self: center;
+}
+
+/* FOOTER */
+.footer {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 11px;
+    background: #22353f;
+}
+.copyright {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #aeaeae;
+}
+.copyright span {
+    color: #18cfab;
+}
+
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -684,40 +774,3 @@ i.nav__item {
         top: 0;
     }
 }  
-
-.carousel__nav_buttons {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    width: 480px;
-    justify-content: space-between;
-}
-.carousel__control_btn-left,
-.carousel__control_btn-right {
-    height: 30px;
-    width: 30px;
-    border: 1px solid #ffffff;
-    line-height: 30px;
-    color: #ffffff;
-    text-align: center;
-}
-
-
-/* FOOTER */
-.footer {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    margin-bottom: 11px;
-    background: #22353f;
-}
-.copyright {
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: #aeaeae;
-}
-.copyright span {
-    color: #18cfab;
-}
