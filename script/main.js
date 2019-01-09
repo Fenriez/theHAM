@@ -67,7 +67,10 @@ const quotes = {
     },
 };
 
-imagesLoader($('.portfolio_image'));
+$(window).on('load', function () {
+    imagesLoader($('.portfolio_image'));
+    gridLayout();
+});
 
 $('.portfolio_review__nav > .nav__btn').on('click', function () {
     let data_group = $(this).text(),
@@ -107,11 +110,24 @@ $('.portfolio_review > .load_more_btn').on('click', function () {
     $(this).hide().next().show();
     let loading = setTimeout(() => {
         imagesLoader(hidden);
-        console.log(hidden.length);
         if (!$(hidden).length) {
             $('.portfolio_review > .preloader').hide();
         } else {
             $('.portfolio_review > .preloader').hide().prev().show();
+        }
+        clearTimeout('loading');
+    }, 1000);
+});
+
+$('.gallery > .load_more_btn').on('click', function () {
+    $(this).hide().next().show();
+    let loading = setTimeout(() => {
+        imagesLoader($('.gallery_content > .gallery_content__image_wrapper:hidden'));
+        gridLayout();
+        if (!$('.gallery_content > .gallery_content__image_wrapper:hidden').length) {
+            $('.gallery > .preloader').hide();
+        } else {
+            $('.gallery > .preloader').hide().prev().show();
         }
         clearTimeout('loading');
     }, 1000);
@@ -187,4 +203,13 @@ function changeText() {
 function changePhoto(elem) {
     $('.nav_indicator.nav_indicator-active > img').clone().addClass('photo-active').appendTo('.quote_author__photo');
     $(elem).slideUp().prev().detach();
+}
+
+function gridLayout() {
+    $('.grid').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        gutter: 20
+    });
 }

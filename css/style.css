@@ -220,6 +220,7 @@ i.nav__item {
     display: grid;
     grid-template-columns: minmax(auto, 1160px);
     grid-template-rows: minmax(191px, auto) auto;
+    grid-auto-rows: auto;
     grid-row-gap: 30px;
     align-items: center;
     justify-content: center;
@@ -688,6 +689,9 @@ i.nav__item {
     width: 32.2%;
     margin-bottom: 17px;
 }
+.grid-item:hover .gallery_content__image_overlay {
+    display: grid;
+}
 .grid-item img {
     display: block;
     width: 100%;
@@ -696,7 +700,7 @@ i.nav__item {
     position: absolute;
     top: 0;
     right: 0;
-    display: grid;  
+    display: none;  
     align-items: center;
     justify-items: center;
     height: 100%;
@@ -707,25 +711,24 @@ i.nav__item {
 .gallery_content__image_overlay .overlay_ctrl {
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 5px;
+    grid-gap: 15px;
     align-items: center;
-    align-content: center;
 }
 .gallery_content__image_overlay .overlay_btn {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     border: 1px solid #14B9D5;
+    border-radius: 3px;
     background: #14B9D5;
-    /* line-height: 60px; */
     color: #ffffff;
     text-align: center;
 }
-
-.grid-item:hover .gallery_content__image_overlay {
-    display: grid;
+.gallery_content__image_overlay .overlay_btn i {
+    line-height: 50px;
 }
-.gallery_content__image_overlay .overlay_ctrl {
-
+.gallery_content__image_overlay .overlay_btn:hover {
+    background: #ffffff;
+    color: #14B9D5;
 }
 
 .gallery .load_more_btn {
